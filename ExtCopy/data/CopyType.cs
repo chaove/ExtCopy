@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExtCopy
+namespace ExtCopy.data
 {
-    class Program
+    public enum CopyType
     {
-        static void Main(string[] args)
-        {
-        }
+        ONLY_COPY,
+        COUNT_STEP,
+        CHECK_AUTHOR
     }
 }

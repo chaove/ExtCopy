@@ -43,7 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="common\ApplicationException.cs" />
+    <Compile Include="common\CommonUtil.cs" />
+    <Compile Include="data\CopyType.cs" />
+    <Compile Include="data\InputInfo.cs" />
+    <Compile Include="extcopy\ExtCopy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
