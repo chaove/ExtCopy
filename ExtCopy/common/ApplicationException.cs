@@ -1,15 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExtCopy.common
 {
-    public class ApplicationException : Exception
+    /// <summary>
+    /// 業務エラークラス
+    /// </summary>
+    class ApplicationException : Exception
     {
-        public ApplicationException() : base() { }
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        public ApplicationException() : base()
+        {
+        }
 
-        public ApplicationException(string message) : base(message) { }
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="message"></param>
+        public ApplicationException(string message) : base(message)
+        {
+        }
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        public ApplicationException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
     }
 }

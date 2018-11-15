@@ -1,80 +1,90 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExtCopy.data
 {
     /// <summary>
-    /// 入力データクラス
+    /// ユーザ入力情報クラス
     /// </summary>
     public class InputInfo
     {
         /// <summary>
-        /// 抽出コピー元ディレクトリ
+        /// 抽出元ディレクトリ
         /// </summary>
         public DirectoryInfo InputDir { get; set; }
 
         /// <summary>
-        /// 抽出コピー先ディレクトリ
+        /// 抽出先ディレクトリ
         /// </summary>
         public DirectoryInfo OutputDir { get; set; }
 
         /// <summary>
-        /// コピー対象文字列
+        /// 選択ファイルパターン
         /// </summary>
-        public List<string> IncludeList { get; set; }
+        public List<string> InclusionFileName { get; set; }
 
         /// <summary>
-        /// コピー非対称文字列
+        /// 除外ファイルパターン
         /// </summary>
-        public List<string> ExcludeList { get; set; }
+        public List<string> ExcludeFilename { get; set; }
 
         /// <summary>
-        /// 対象開始日時
+        /// 更新日時（開始）
         /// </summary>
-        public DateTime StartDate { get; set; }
+        public string StartDateTime { get; set; }
 
         /// <summary>
-        /// 対象終了日時
+        /// 更新日時（終了）
         /// </summary>
-        public DateTime EndDate { get; set; }
+        public string EndDateTime { get; set; }
 
         /// <summary>
-        /// 対象最低ステップ
+        /// 最低行数
         /// </summary>
-        public long LowStep { get; set; }
+        public string MinStep { get; set; }
 
         /// <summary>
-        /// 対象最高ステップ
+        /// 最大行数
         /// </summary>
-        public long HighStep { get; set; }
+        public string MaxStep { get; set; }
 
         /// <summary>
-        /// コピー最大ステップ
+        /// 合計最大行数
         /// </summary>
-        public long MaxTotalStep { get; set; }
+        public string TotalMaxStep { get; set; }
 
         /// <summary>
-        /// コピー先分割数
-        /// </summary>
-        public int DevideNum { get; set; }
-
-        /// <summary>
-        /// コピータイプ
-        /// </summary>
-        public CopyType copyType { get; set; }
-
-        /// <summary>
-        /// 強制上書きフラグ
+        /// 上書き
         /// </summary>
         public bool OverWrite { get; set; }
 
         /// <summary>
-        /// コンソール出力フラグ
+        /// コピー先ディレクトリ分割数
         /// </summary>
-        public bool Output { get; set; }
+        public int DevideNum { get; set; }
+
+        /// <summary>
+        /// 行数カウント方法
+        /// </summary>
+        public CountType CountType { get; set; }
+
+        /// <summary>
+        /// コピー先ディレクトリ分割用合計行数
+        /// </summary>
+        public long TotalStep { get; set; }
+
+        /// <summary>
+        /// 詳細情報出力フラグ
+        /// </summary>
+        public bool OutputDetail { get; set; }
+
+        /// <summary>
+        /// オブジェクト複製
+        /// </summary>
+        /// <returns></returns>
+        public InputInfo Clone()
+        {
+            return (InputInfo)MemberwiseClone();
+        }
     }
 }

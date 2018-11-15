@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ExtCopy.data
 {
-    public enum CopyType
+    public enum CountType
     {
-        ONLY_COPY,
+        COPY_ONLY,
         COUNT_STEP,
         CHECK_AUTHOR
     }
